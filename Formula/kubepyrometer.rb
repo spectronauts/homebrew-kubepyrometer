@@ -6,8 +6,8 @@
 class Kubepyrometer < Formula
   desc "Kubernetes control-plane load-testing harness"
   homepage "https://github.com/spectronauts/KubePyrometer"
-  url "https://github.com/spectronauts/KubePyrometer/releases/download/v0.3.0-preview/kubepyrometer-0.3.0-preview.tar.gz"
-  sha256 "e583def53d02bc799f479be088aa5fdb8aa0791d82bf8cd5fad26eb6d29ede93"
+  url "https://github.com/spectronauts/KubePyrometer/releases/download/v0.9.0-candidate/kubepyrometer-0.9.0-candidate.tar.gz"
+  sha256 "faab8bd7d3f29db906a47a83f806c2809a2126897cd0a06fe60e96abbda98d0a"
   license "Apache-2.0"
 
   depends_on "bash"
@@ -15,9 +15,9 @@ class Kubepyrometer < Formula
 
   def install
     kp = libexec/"kubepyrometer"
-    kp.install Dir["v0/scripts", "v0/workloads", "v0/templates",
-                   "v0/manifests", "v0/configs", "v0/images",
-                   "v0/config.yaml", "v0/run.sh"]
+    kp.install Dir["lib/scripts", "lib/workloads", "lib/templates",
+                   "lib/manifests", "lib/configs", "lib/images",
+                   "lib/config.yaml", "lib/run.sh"]
     kp.install "VERSION"
 
     bin.install "kubepyrometer"
